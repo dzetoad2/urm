@@ -1,0 +1,42 @@
+/* CSS Document */
+
+table{
+ background-color:#EEE;
+ border-style:solid;
+ border-color:white;
+ border-collapse:collapse;
+ width:100%;
+}
+td,th{
+	padding:6px;
+}
+tr.clickable, td.clickable, .facilityTypeId, td.customFacilityTypeId, tr.facilityTypeRow, img.editCustomFacility, img.editFacility{
+	cursor: pointer;	
+	/*	  tr.userFacilityRow, tr.facilityRow,tr.surveyCategoryRow,tr.activityCategoryRow */
+}
+th{
+	font-weight:bold;
+}
+td{
+	border-width:3px;
+	border-style:solid;
+	border-color:#FFF;
+	border-collapse:collapse;
+}
+td.bold{
+	font-weight:bold;
+}
+.alt{
+	background-color:#CCC;
+}
+.over{
+	background-color:#9C9;
+}
+tr.highlight{
+   background-color:#CCC;
+}
+/*
+.instructions{
+	width:800px;
+}
+*/

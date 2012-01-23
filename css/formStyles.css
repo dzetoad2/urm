@@ -1,0 +1,75 @@
+.inputBox{
+	display:block;  /* inline-block;*/
+	margin: 3px 2.5px; 
+}
+.left{
+	width:20em;
+	float:left;
+	border-style:solid;
+	border-width:3px;
+	border-color:#55B;
+}
+.right{
+	width:20em;
+	/*clear:both;*/
+	border-style:solid;
+	border-width:3px;
+	border-color:#5B5;
+}
+.radio div{
+	clear:none;
+	float:left;
+	white-space:nowrap;	
+}
+.floater{
+	float:left;
+}
+.clearer{
+	clear:both;
+}
+form ol, form ul{
+  list-style:none;
+}
+li{
+ margin: 8px 10px;
+}
+.inputunit input, li input, .textInput input, fieldset input{
+	background-color:#FFD;
+	margin:0px;
+}
+.button{
+/*-webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+border-radius: 25px; 
+
+	background:url(/images/submit_button.jpg) no-repeat;
+    cursor:pointer;
+    width: 302px;
+    height: 77px;
+    border: none;
+  */	
+}
+#replacement-1 {
+  width: 300px;
+  height: 76px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent url(../images/submit_button.jpg) no-repeat center top;
+  color:#CCC;
+  font-size:1.7em;
+  text-indent: -0em;
+  cursor: pointer; /* hand-shaped cursor */
+  cursor: hand; /* for IE 5.x */
+}
+
+fieldset input{
+	margin: 0px 3px 0px 20px;
+	padding: 5px;
+}
+fieldset{
+	padding:5px 5px 5px 0px;
+}
+.hiddenDefinition{
+	padding: .8em  0px 0.5em 0px;
+}

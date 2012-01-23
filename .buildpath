@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry excluding="urm_private/" kind="src" path=""/>
+	<buildpathentry kind="src" path="urm_private"/>
+</buildpath>
