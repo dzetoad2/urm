@@ -10,7 +10,7 @@ if(!loggedin()){
 	exit();
 }
 //----------end required on every secure page----------------
-require_once('urm_secure/facilityTypeFunctions.php';
+require_once('urm_secure/facilityTypeFunctions.php');
 
 if(!isset($_POST['userFacilityId']) && !isset($_POST['customFacilityId'])){
 	$errorMsg="neither  userFacilityId nor customFacilityId was set - error.";
