@@ -194,7 +194,7 @@ $(document).ready(function() {
 	   
 	   $(".customActivityRow .nameCell").click(function() {
 		     var rowId = $(this).closest(".customActivityRow").attr("id");
-		     var title = $(this).closest(".customActivityRow").children(".nameCell:first").attr("id");
+		     //var title = $(this).closest(".customActivityRow").children(".nameCell:first").attr("id");
 //		     alert("User Created Activity: "+title +" was chosen.");
 		     //now add to the form 'chooseAction' and submit it.
 		     $("#viewAction2").children("input#customActivityId").val(rowId);

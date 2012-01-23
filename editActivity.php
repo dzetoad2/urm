@@ -6,6 +6,13 @@ require_once 'urm_secure/activityFunctions.php';
 require_once 'urm_secure/editActivityFunctions.php';
 require_once 'urm_secure/sessionStateFunctions.php';
 
+
+
+require_once( 'urm_secure/activity/activityFormDAO.php');   //dont know if need this ?
+
+require_once( 'urm_secure/createActivity/createActivityController.php');
+
+
 if(!loggedin()){
   //echo "userarea but not loggedin!<br/>\n";
   header("Location: login.php");
@@ -75,6 +82,13 @@ if($activityType == "activity" && $userId != 1){
 	throwMyExc($em);
 }
 $activityData = array();
+
+
+
+
+
+$afDao = new activityFormDAO();
+
 
 
 
@@ -207,6 +221,13 @@ echo "You are logged in as: ". $_SESSION['username'].'<br/>';
   </ol>
  </fieldset> 
 </div>
+
+
+ 
+
+
+
+
 <div>
  <input type="submit" name="submitEdit" value="Submit Edit" />
 </div>

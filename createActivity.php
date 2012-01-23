@@ -101,12 +101,12 @@ if(!isset($_POST['is_ca']) || trim($_POST['is_ca'])==''){
 $fid=$_POST['fid'];
 $is_cf=$_POST['is_cf'];
 
-$activityId = 'dummyValue'; //just a placetaker, the form requires this to be set
-$customActivityId = 'dummyValue'; //just a placetaker, the form requires this to be set
+//$activityId = 'dummyValue'; //         DO NOT SUPPORT EDITING NORMAL ACTIVITIES  the form requires this to be set
+$customActivityId = 'dummyValue'; //  the form requires this to be set
 $activityData = array();
-$activityData['isForAdult'] = "yes";
-$activityData['isForPediatric'] = "yes";
-$activityData['isForNatal'] = "yes";
+$activityData['isForAdult'] = "yes"; //  the form requires this to be set
+$activityData['isForPediatric'] = "yes"; //  the form requires this to be set
+$activityData['isForNatal'] = "yes"; //  the form requires this to be set
 //savePostAndSessionVars($userId,$_POST,$_SESSION,"createActivity.php");
 //========= INIT THE ACTIVITY VARS HERE - external======
 //require_once 'urm_secure/activity/activityInitVars.php';

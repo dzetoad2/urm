@@ -74,11 +74,18 @@ if(isset($_POST['activityCategoryId'])){
 }elseif(isset($_SESSION['activityCategoryDocId'])){
 	$activityCategoryDocId = $_SESSION['activityCategoryDocId'];
 	unset($_SESSION['activityCategoryId']);
-}elseif(isset($_POST['activityCategoryDocId'])){
+}elseif(isset($_POST['activityCategoryDocId'])){  //this one doesnt matter - just being strict to make sure the bad data doesnt happen.
 	$em=' in activity.php near top: post activitycategorydocid was set, impossible!';
 	throwMyExc($em);
+}elseif(isset($_POST['customActivityId'])){
+
+	//do nothin. its handled below.
+	
+}elseif(isset($_SESSION['customActivityId'])){
+	
+	//do nothin - handled below
 }else{
-	$em='none was set: act cat id , nor act cat doc id, neither post nor session';
+	$em='none of these 5 was set: post activitycategoryid, session activitycategoryid,  session activitycategorydocid,  post customActivityId, session customActivityid. ';
 	throwMyExc($em);
 }
 //----------------------------
