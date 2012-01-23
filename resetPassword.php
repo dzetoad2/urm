@@ -3,9 +3,9 @@
 <?php
 try{
 
-require_once 'urm/functions.php';
-require_once 'urm/validationFunctions.php';
-require_once 'urm/resetPasswordFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/validationFunctions.php';
+require_once 'urm_secure/resetPasswordFunctions.php';
 
 if(isset($_POST['resetPasswordSubmit'])){
 $errorLabel="";
@@ -29,7 +29,7 @@ if(!isEmailAddress($username)){
 }
 //3. check that the captcha is valid.  use the google captcha.
 
-require_once 'urm/securimage/securimage.php';  //$_SERVER['DOCUMENT_ROOT'] .
+require_once 'urm_secure/securimage/securimage.php';  //$_SERVER['DOCUMENT_ROOT'] .
 $securimage = new Securimage();
  
 if($errorLabel==''){ 

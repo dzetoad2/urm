@@ -1,9 +1,9 @@
 <?php 
 try{
 
-require_once 'urm/functions.php';
-require_once 'urm/customFacilityFunctions.php';
-require_once 'urm/sessionStateFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/customFacilityFunctions.php';
+require_once 'urm_secure/sessionStateFunctions.php';
 
 if(!isset($_SESSION['userid'])){
   if(defined('DEBUG')){

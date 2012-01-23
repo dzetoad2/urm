@@ -2,10 +2,10 @@
 //----------required on every secure page----------------
 try{
 	
-require_once 'urm/functions.php';
-require_once 'urm/facilityFunctions.php';
-require_once 'urm/facilityTypeFunctions.php';
-require_once 'urm/modProfileFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/facilityFunctions.php';
+require_once 'urm_secure/facilityTypeFunctions.php';
+require_once 'urm_secure/modProfileFunctions.php';
 
 if(!loggedin()){
   //echo "userarea but not loggedin!<br/>\n";

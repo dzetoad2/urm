@@ -1,11 +1,11 @@
 <?php
 try{
 
-require_once 'urm/functions.php';
-require_once 'urm/activityCategoriesFunctions.php';
-require_once 'urm/breadCrumbFunctions.php';
-require_once 'urm/sessionStateFunctions.php';
-require_once 'urm/activitiesSupplementalFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/activityCategoriesFunctions.php';
+require_once 'urm_secure/breadCrumbFunctions.php';
+require_once 'urm_secure/sessionStateFunctions.php';
+require_once 'urm_secure/activitiesSupplementalFunctions.php';
 
 if(!loggedin()){
 	//echo "userarea but not loggedin!<br/>\n";

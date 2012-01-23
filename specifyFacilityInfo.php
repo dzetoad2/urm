@@ -1,11 +1,11 @@
 <?php
 try{
 
-require_once 'urm/functions.php';
-require_once 'urm/sessionStateFunctions.php';
-require_once 'urm/specifyFacilityInfoFunctions.php';
-require_once 'urm/validationFunctions.php';
-require_once 'urm/surveyCategoriesFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/sessionStateFunctions.php';
+require_once 'urm_secure/specifyFacilityInfoFunctions.php';
+require_once 'urm_secure/validationFunctions.php';
+require_once 'urm_secure/surveyCategoriesFunctions.php';
 
 if(!isset($_SESSION['userid'])){
     $errorMsg= "error: userid not set";

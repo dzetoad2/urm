@@ -2,10 +2,10 @@
 
 try{
 
-require_once( 'urm/functions.php');
-require_once( 'urm/activitiesFunctions.php');
-require_once( 'urm/breadCrumbFunctions.php');
-require_once( 'urm/sessionStateFunctions.php');
+require_once( 'urm_secure/functions.php');
+require_once( 'urm_secure/activitiesFunctions.php');
+require_once( 'urm_secure/breadCrumbFunctions.php');
+require_once( 'urm_secure/sessionStateFunctions.php');
 
 if(!loggedin()){
 	if(defined('DEBUG'))echo "activities.php :  but not loggedin!<br/>\n";

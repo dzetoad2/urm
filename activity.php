@@ -1,11 +1,11 @@
 <?php
 try{
 
-require_once( 'urm/functions.php');
-require_once( 'urm/activityFunctions.php');
-require_once( 'urm/activitiesSupplementalFunctions.php');
-require_once( 'urm/sessionStateFunctions.php');
-require_once( 'urm/surveyCategoriesFunctions.php');
+require_once( 'urm_secure/functions.php');
+require_once( 'urm_secure/activityFunctions.php');
+require_once( 'urm_secure/activitiesSupplementalFunctions.php');
+require_once( 'urm_secure/sessionStateFunctions.php');
+require_once( 'urm_secure/surveyCategoriesFunctions.php');
 
  if(!loggedin()){
 	//echo "userarea but not loggedin!<br/>\n";
@@ -135,7 +135,7 @@ $errorLabel="";
 $statusLabel="";
 
 //========= DOING ACTIVITY INIT VARS HERE. INCLUDES IMG ARROWS AND THE FORM VARS.
-require_once 'urm/activity/activityInitVars.php';
+require_once('urm_secure/activity/activityInitVars.php');
 
 
 //================================ SURVEY SUBMITTAL HERE========================
@@ -143,7 +143,7 @@ require_once 'urm/activity/activityInitVars.php';
 if(isset($_POST['hiddenSubmitName'])){  //submitSurveyForm
 	
 	//=====DO SUBMIT BLOCK CONTENTS HERE
- require_once('urm/activity/activitySubmitProcessing.php');
+ require_once('urm_secure/activity/activitySubmitProcessing.php');
 	
 }
 //=============END SUBMIT=======
@@ -231,7 +231,7 @@ if(isset($errorLabel) && $errorLabel!='')
 
  <form id="submitSurveyForm" name="submitSurveyForm" action="activity.php" method="post">
 <!-- echo form data here --> 
-<?php require_once('urm/activity/activityFormContents.php');?>
+<?php require_once('urm_secure/activity/activityFormContents.php');?>
 </form>
 
 

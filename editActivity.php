@@ -1,10 +1,10 @@
 <?php
 try{
 
-require_once 'urm/functions.php';
-require_once 'urm/activityFunctions.php';
-require_once 'urm/editActivityFunctions.php';
-require_once 'urm/sessionStateFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/activityFunctions.php';
+require_once 'urm_secure/editActivityFunctions.php';
+require_once 'urm_secure/sessionStateFunctions.php';
 
 if(!loggedin()){
   //echo "userarea but not loggedin!<br/>\n";

@@ -1,11 +1,11 @@
 <?php
 try{
 
-require_once 'urm/functions.php';
-require_once 'urm/editFacilityFunctions.php';
-require_once 'urm/sessionStateFunctions.php';
-require_once 'urm/validationFunctions.php';
-require_once 'urm/surveyCategoriesFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/editFacilityFunctions.php';
+require_once 'urm_secure/sessionStateFunctions.php';
+require_once 'urm_secure/validationFunctions.php';
+require_once 'urm_secure/surveyCategoriesFunctions.php';
 
 
 if(!isset($_SESSION['userid'])){

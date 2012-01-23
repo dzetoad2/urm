@@ -2,8 +2,8 @@
 
 <?php
  
-require_once 'urm/functions.php';
-require_once 'urm/sessionStateFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/sessionStateFunctions.php';
 
 if(loggedin()){
 

@@ -1,10 +1,10 @@
 <?php
 try{
 
-require_once 'urm/functions.php';
-require_once 'urm/surveyCategoriesFunctions.php';
-require_once 'urm/breadCrumbFunctions.php';
-require_once 'urm/sessionStateFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/surveyCategoriesFunctions.php';
+require_once 'urm_secure/breadCrumbFunctions.php';
+require_once 'urm_secure/sessionStateFunctions.php';
 
 
 if(!loggedin()){

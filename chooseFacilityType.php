@@ -3,14 +3,14 @@ try{
 
 
 //----------required on every secure page----------------
-require_once 'urm/functions.php';
+require_once 'urm_secure/functions.php';
 if(!loggedin()){
 	//echo "userarea but not loggedin!<br/>\n";
 	header("Location: login.php");
 	exit();
 }
 //----------end required on every secure page----------------
-require_once 'urm/facilityTypeFunctions.php';
+require_once('urm_secure/facilityTypeFunctions.php';
 
 if(!isset($_POST['userFacilityId']) && !isset($_POST['customFacilityId'])){
 	$errorMsg="neither  userFacilityId nor customFacilityId was set - error.";

@@ -1,9 +1,9 @@
 <?php 
 try{
 
-require_once 'urm/functions.php';
-require_once 'urm/facilityFunctions.php';
-require_once 'urm/validationFunctions.php';
+require_once 'urm_secure/functions.php';
+require_once 'urm_secure/facilityFunctions.php';
+require_once 'urm_secure/validationFunctions.php';
 
 if(!loggedin()){
   //echo "userarea but not loggedin!<br/>\n";

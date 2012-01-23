@@ -1,11 +1,11 @@
 <?php
 try{
 
-require_once( 'urm/functions.php');
-require_once( 'urm/createActivityFunctions.php');
-require_once( 'urm/sessionStateFunctions.php');
-require_once( 'urm/activity/activityFormDAO.php');
-require_once( 'urm/createActivity/createActivityController.php');
+require_once( 'urm_secure/functions.php');
+require_once( 'urm_secure/createActivityFunctions.php');
+require_once( 'urm_secure/sessionStateFunctions.php');
+require_once( 'urm_secure/activity/activityFormDAO.php');
+require_once( 'urm_secure/createActivity/createActivityController.php');
 
 if(!loggedin()){
   //echo "userarea but not loggedin!<br/>\n";
@@ -109,7 +109,7 @@ $activityData['isForPediatric'] = "yes";
 $activityData['isForNatal'] = "yes";
 //savePostAndSessionVars($userId,$_POST,$_SESSION,"createActivity.php");
 //========= INIT THE ACTIVITY VARS HERE - external======
-//require_once 'urm/activity/activityInitVars.php';
+//require_once 'urm_secure/activity/activityInitVars.php';
 $afDao = new activityFormDAO();
 
 //======================================================
@@ -235,7 +235,7 @@ echo "You are logged in as: ". $_SESSION['username'].'<br/>';
 
 
 // -------- MANIPULATE AFDAO TO YIELD OUTPUT INTO THIS FORM:
-require_once('urm/createActivity/createActivityFormContents.php');  //contents of the form.
+require_once('urm_secure/createActivity/createActivityFormContents.php');  //contents of the form.
 ?>
 
 <div>
