@@ -241,6 +241,11 @@ $(document).ready(function() {
 <?php if(isset($errorLabel) && $errorLabel!=''){?>
   <h4 class="errorLabel"><?php echo $errorLabel;?></h4>
 <?php }?>
+<?php if($activityCategoriesAreComplete===true){?>
+<h4 class="notificationBanner" >All activities for this survey are complete. Please complete any custom procedures (User Created Activities, at bottom of the page) before continuing
+with other surveys. </h4>
+<?php }?>
+
 <h3> <?php echo $surveyCategoryName;?>:</h3>
 
 
@@ -281,6 +286,10 @@ $(document).ready(function() {
 // custom activities.    so this block is hidden unless that is true.
 if($activityCategoriesAreComplete===true   ||  defined('debug')  || defined('debugActivityCategories') ){
 ?>
+<?php if($activityCategoriesAreComplete===true){?>
+<h4 class="notificationBanner" >All activities for this survey are complete. Please complete any custom procedures (User Created Activities, below) before continuing
+with other surveys. </h4>
+<?php }?>
 <h3>User Created Activities:</h3>
 
 <div>
