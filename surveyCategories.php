@@ -161,8 +161,13 @@ $(document).ready(function() {
 <?php if(isset($errorLabel) && $errorLabel != ''){?>
   <h4 class="errorLabel"><?php echo $errorLabel;?></h4>
 <?php }?>
+
+
+<h4 class="notificationBanner" >Please click on the survey(s) you wish to complete.</h4>
+
+
 <h3>Survey Categories for <?php echo $facilityName;?>:</h3>
-<p>Click on a survey category to see its activity categories.</p>
+<p>Click on a survey category title to see its activity categories.</p>
 <div>
 <table>
 <col class="1">

@@ -286,10 +286,9 @@ with other surveys. </h4>
 // custom activities.    so this block is hidden unless that is true.
 if($activityCategoriesAreComplete===true   ||  defined('debug')  || defined('debugActivityCategories') ){
 ?>
-<?php if($activityCategoriesAreComplete===true){?>
-<h4 class="notificationBanner" >All activities for this survey are complete. Please complete any custom procedures (User Created Activities, below) before continuing
+ <h4 class="notificationBanner" >All activities for this survey are complete. Please complete any custom procedures (User Created Activities, below) before continuing
 with other surveys. </h4>
-<?php }?>
+
 <h3>User Created Activities:</h3>
 
 <div>
@@ -332,6 +331,10 @@ with other surveys. </h4>
 
 
 </div>
+
+
+
+
 <?php }?>
 <p>
 
@@ -344,6 +347,24 @@ has been successfully submitted, a green check will appear on the completion sta
 as you like.
 
 </p>
+
+
+
+
+
+ 
+
+<?php if($activityCategoriesAreComplete===true){?>
+ <p class="buttonParagraph"> 
+   <a href="#" class="doneSurvCatbutton_link" id="doneWithSurveyCategory" >Done with this Survey Category (including its Custom Procedures)</a>
+ </p>
+<?php }?>
+ 
+ 
+ 
+ 
+ 
+
 <hr/>
 <p>
   Go back to <a href="surveyCategories.php">Survey Categories</a>.
