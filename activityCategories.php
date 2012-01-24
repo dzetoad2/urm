@@ -282,8 +282,15 @@ $(document).ready(function() {
 if($activityCategoriesAreComplete===true   ||  defined('debug')  || defined('debugActivityCategories') ){
 ?>
 <h3>User Created Activities:</h3>
-<p>Click on a title to edit survey data for that activity.</p>
+
 <div>
+
+
+<div> 
+  <a id="createCustomActivity" name="createCustomActivity" href="createActivity.php">Create a User Created Activity</a><br/>
+</div>
+
+
 <table>
 <col class="1">
 <col class="2"/>
@@ -304,9 +311,17 @@ if($activityCategoriesAreComplete===true   ||  defined('debug')  || defined('deb
 	?>
 	</tbody>
 </table>
-<div> 
-  <a id="createCustomActivity" name="createCustomActivity" href="createActivity.php">Create a User Created Activity</a><br/>
-</div>
+
+<p>
+<b>Changing a Created Activity</b><br/>
+ You may edit or drop custom activities after you have created them. <br/>
+ To edit the name or description, click on the edit pen.   <br/>
+ To edit survey answer data, click on the activity title. <br/>
+ You may drop the activity by clicking the red X.
+</p>
+
+
+
 </div>
 <?php }?>
 <p>
