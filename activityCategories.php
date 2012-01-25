@@ -159,7 +159,9 @@ if(!$customActivityRows = getCustomActivityRowsHtml($userId, $fid,$is_cf,1, $sur
 <link rel="stylesheet" type="text/css" href="css/textcontent.css" />
 
 
-<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+
 <script type="text/javascript" src="js/tables_noAlternatingColor.js"></script>
 
 <script type="text/javascript">                                         
@@ -222,7 +224,58 @@ $(document).ready(function() {
 		     document.forms["chooseAction4"].submit();
 		     e.preventDefault();
 		   });
-	  
+
+
+
+
+
+
+	   
+	   $("#doneWithSurveyCategoryButton").click(function(e) {
+			 //javascript popup, yes or no.
+		     var answer = confirm("Are there other surveys you wish to complete for this facility?")
+		     if (answer){
+//		       $("#dropAction").children("input#surveyCategoryId").val(rowId);
+//		       document.forms["dropAction"].submit();
+			   //go to the finish page
+		    	 window.location = 'surveyFinished.php';
+		     }	
+		     $dialog.dialog('open');
+				// prevent the default action, e.g., following a link
+			 e.preventDefault();
+			 return false;
+			 
+	   });
+
+
+	   //document.ready:
+	   var $dialog = $('<div class="dialog"></div>')
+		.html('This dialog will show every time!')
+		.dialog({
+			autoOpen: false,
+			title: 'Basic Dialog'
+		});
+
+	   
+//	   var $dialog = $('<div class="ui-dialog ui-widget ui-widget-content ui-corner-all undefined ui-draggable ui-resizable">
+//	    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+//	      <span id="ui-dialog-title-dialog" class="ui-dialog-title">Dialog title</span>
+//	      <a class="ui-dialog-titlebar-close ui-corner-all" href="#"><span class="ui-icon ui-icon-closethick">close</span></a>
+//	    </div>
+//	    <div style="height: 200px; min-height: 109px; width: auto;" class="ui-dialog-content ui-widget-content" id="dialog">
+//	      <p>Dialog content goes here.</p>
+//	    </div>
+//	    </div>')
+//	    .dialog({
+//		    autoOpen:false,
+//		    title: 'themed dialog'
+//	    });
+
+
+
+
+
+
 	   
 });
 </script>
@@ -356,7 +409,7 @@ as you like.
 
 <?php if($activityCategoriesAreComplete===true){?>
  <p class="buttonParagraph"> 
-   <a href="#" class="doneSurvCatbutton_link" id="doneWithSurveyCategory" >Done with this Survey Category (including its Custom Procedures)</a>
+   <a href="#" class="doneSurvCatbutton_link" id="doneWithSurveyCategoryButton" >Done with this Survey Category (including its Custom Procedures)</a>
  </p>
 <?php }?>
  

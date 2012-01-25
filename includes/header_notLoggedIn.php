@@ -1,0 +1,1 @@
+<div class="header">	<h2><a href="home.php" title="Survey home">Uniform Reporting Manual Survey</a></h2>		<p class="header_utilities"><i></i>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="header_link" href="login.php" title="URM_Login"><b>URM Login</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.aarc.org/" title="AARC Home"><b>AARC.org</b></a></p></div>
