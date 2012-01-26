@@ -158,11 +158,28 @@ if(!$customActivityRows = getCustomActivityRowsHtml($userId, $fid,$is_cf,1, $sur
 <link rel="stylesheet" type="text/css" href="css/tables.css" />
 <link rel="stylesheet" type="text/css" href="css/textcontent.css" />
 
+<link rel="stylesheet" href="css/jqueryui/1.7.1/themes/blitzer/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="js/jquery.alerts-1.1/jquery.alerts.css" type="text/css" />
+
+
+
+
+
+
 
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>-->
 <script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
 
+<!--<script src="js/jquery.easy-confirm-dialog.js"></script>-->
+
+<script src="js/jquery.alerts-1.1/jquery.alerts.js"></script>
+
+
+
 <script type="text/javascript" src="js/tables_noAlternatingColor.js"></script>
+
+
 
 <script type="text/javascript">                                         
 $(document).ready(function() {
@@ -230,46 +247,66 @@ $(document).ready(function() {
 
 
 
+//	   $("#doneWithSurveyCategoryButton").easyconfirm({locale: { title: 'Confirm', button: ['No','Yes']}});
+
 	   
 	   $("#doneWithSurveyCategoryButton").click(function(e) {
 			 //javascript popup, yes or no.
-		     var answer = confirm("Are there other surveys you wish to complete for this facility?")
-		     if (answer){
-//		       $("#dropAction").children("input#surveyCategoryId").val(rowId);
-//		       document.forms["dropAction"].submit();
-			   //go to the finish page
-		    	 window.location = 'surveyFinished.php';
-		     }	
-		     $dialog.dialog('open');
+//		     var answer = confirm("Are there other surveys you wish to complete for this facility?")
+//		     if (answer){
+////		       $("#dropAction").children("input#surveyCategoryId").val(rowId);
+////		       document.forms["dropAction"].submit();
+//			   //go to the finish page
+//		    	 window.location = 'surveyFinished.php';
+//		     }	
+//		     $dialog.dialog('open');
 				// prevent the default action, e.g., following a link
-			 e.preventDefault();
-			 return false;
+				
+//	    $("#yesno").click(function() {
+//			alert("You clicked yes");
+//		});
+			
+			
+			jConfirm('Are there other surveys you wish to complete for this facility?', 'Confirmation Dialog', function(r) {
+				if(r == true){
+					window.location = 'surveyCategories.php';
+    				//jAlert('Confirmed true: ' + r, 'Confirmation Results');
+				}
+				else{
+					window.location = 'surveyFinished.php';
+	    			//jAlert('Confirmed false: ' + r, 'Confirmation Results');
+				}
+				
+			});
+			
+				
+//			alert("You clicked yes");
+
+
+
+
+
+			//click yes:   go up to surveyCategories.
+			//click no:  log out.	
+
+			
+			
+			e.preventDefault();
+			  
 			 
 	   });
 
 
+		
 	   //document.ready:
-	   var $dialog = $('<div class="dialog"></div>')
-		.html('This dialog will show every time!')
-		.dialog({
-			autoOpen: false,
-			title: 'Basic Dialog'
-		});
+//	   var $dialog = $('<div class="dialog"></div>')
+//		.html('This dialog will show every time!')
+//		.dialog({
+//			autoOpen: false,
+//			title: 'Basic Dialog'
+//		});
 
-	   
-//	   var $dialog = $('<div class="ui-dialog ui-widget ui-widget-content ui-corner-all undefined ui-draggable ui-resizable">
-//	    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
-//	      <span id="ui-dialog-title-dialog" class="ui-dialog-title">Dialog title</span>
-//	      <a class="ui-dialog-titlebar-close ui-corner-all" href="#"><span class="ui-icon ui-icon-closethick">close</span></a>
-//	    </div>
-//	    <div style="height: 200px; min-height: 109px; width: auto;" class="ui-dialog-content ui-widget-content" id="dialog">
-//	      <p>Dialog content goes here.</p>
-//	    </div>
-//	    </div>')
-//	    .dialog({
-//		    autoOpen:false,
-//		    title: 'themed dialog'
-//	    });
+	    
 
 
 
