@@ -39,7 +39,7 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 	 
  	 $username = cleanStrForDb($username);
  
- 	 $login = mysql_query("SELECT * FROM user WHERE username='$username'   ");           //check un/pw against db.
+ 	 $login = mysql_queryCustom("SELECT * FROM user WHERE username='$username'   ");           //check un/pw against db.
 	 if(!isset($login) || $login === FALSE){ 
 	    $errorMsg= "Error checking login against database";
 	    throwMyExc($errorMsg);
@@ -72,7 +72,7 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 		    
 		    $authtoken = cleanStrForDb($authtoken);
 
-		    $result = mysql_query("UPDATE user  set  authtoken='".$authtoken."' WHERE   username='$username'  ");           //update authtoken in db.
+		    $result = mysql_queryCustom("UPDATE user  set  authtoken='".$authtoken."' WHERE   username='$username'  ");           //update authtoken in db.
 	 	 	if($result===FALSE){
 	 	 	   $errorMsg="Error updating authtoken for ".$username.", please contact the adinistrator.";
 	 	 	   throwMyExc($errorMsg);

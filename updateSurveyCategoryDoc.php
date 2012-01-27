@@ -13,7 +13,7 @@ function updateSurveyCategoryDoc($id,$doc)
 	//$docE = base64_encode($doc);            //base64_decode()
 	
 	//insert into db.
-	 mysql_query("update  surveyCategory  set doc='".$doc."' 
+	 mysql_queryCustom("update  surveyCategory  set doc='".$doc."' 
 	                 where id = ".$id." ");
 	 $r = mysql_affected_rows();
 	 if($r == 0){

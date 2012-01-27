@@ -201,7 +201,7 @@ if($userId == 1){
    
  }
  if(!$activityRows){
- 	$errorMsg = "Error in getActivityRowshtml(un)";
+ 	$errorMsg = "Error in activities.php regarding the call to getActivityRowshtml(un)";
 	throwMyExc($errorMsg);
  }
 }
