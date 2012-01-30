@@ -29,7 +29,7 @@ if(!isEmailAddress($username)){
 }
 //3. check that the captcha is valid.  use the google captcha.
 
-require_once 'urm_secure/securimage/securimage.php';  //$_SERVER['DOCUMENT_ROOT'] .
+require_once 'urm/securimage/securimage.php';  //$_SERVER['DOCUMENT_ROOT'] .
 $securimage = new Securimage();
  
 if($errorLabel==''){ 
