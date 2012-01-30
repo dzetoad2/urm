@@ -129,7 +129,7 @@ if(isset($statusLabel) && $statusLabel!=''){
 <h4>Instructions:</h4>
 <p>
 Passwords must be 8 characters long and include at least one letter and one number. 
-You must enter the characters displayed in the space below them then click on "register" to register your username. 
+You must enter the characters displayed in the space below them then click on the "Register" button to register your username. 
 If you cannot read the characters, you may select a different image. After you have successfully created your Username and Password a confirming message 
 will appear on the screen. Save your access information for future access. To access the survey, click on Log in and enter your access information and click on Log In.
 </p>
