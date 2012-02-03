@@ -214,7 +214,8 @@ $(document).ready(function() {
 </div>
 
 <?php if($atLeastOneSurveyCategoryIsComplete === true){?>
-<h4 class="notificationBanner" >When finished with all appropriate surveys, click the "Survey Home" link at the top of this page to return to Survey Home.</h4>
+<h4 class="notificationBanner" >When finished with all appropriate surveys, click the "Survey Home" link at the top of this page to return to Survey Home.
+   After verifying that you have completed all desired surveys for your facilities you may log out. Thank you!</h4>
 <?php }elseif($atLeastOneSurveyCategoryIsComplete === false){
 
 }else{

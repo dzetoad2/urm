@@ -148,7 +148,7 @@ if(isset($activityId)){
 		else if(isset($customActivityId)){
 			//$statusLabel = "Success updating user created activity. <br/>";
 			$_SESSION['updateCustomActivitySuccess'] = 'true';
-			header('Location: activityCategories.php');
+			header('Location: activityCategories.php#activityCategories');
 			exit();
 		}
 		else{

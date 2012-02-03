@@ -136,9 +136,9 @@ if ( isset($_POST['createSubmit'])){
 			$afDao->statusLabel =  "Success creating ".$activityTypeLabel." activity.<br/>";
 			$_SESSION['createActivitySuccess'] = $afDao->statusLabel;
 			 if($activityType == "activity"){
-  				$location = "activities.php"; 
+  				$location = "activities.php";  //this should never happen - it is not supported. admin only can see statistics - NOT a normal user.
 			 }elseif($activityType == "customActivity"){
- 				$location = "activityCategories.php"; 
+ 				$location = "activityCategories.php#activityCategories"; 
  			 }
 			header('Location: '.$location);
 		}
