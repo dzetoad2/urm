@@ -79,7 +79,7 @@ if($ufBean === '') //  there is no first owner. leave field blank. and keep edit
     $originalUser = getUsername($facilityOwnerId);
     $statusLabel .= 'Note: User "'.$originalUser.'" already added this facility and provided the Staffed Bed Count data. Values are locked unless "'.$originalUser.'" 
       deletes the facility from his or her account<br/>';
-    //forward to the calling page: myfacilities.php
+    
     
     
     
@@ -268,15 +268,15 @@ $(document).ready(function() {
 	   $('#isOutpatientPRC1').click(function(e) {  //the yes button
 			$('input.canDisable').attr('disabled','disabled');
 			$('input.canDisable').css('background-color','#EEE');
-			
-		   
 	   });
 	   $('#isOutpatientPRC2').click(function(e) {     // the no button
 		   $('input.canDisable').removeAttr('disabled');
 		   $('input.canDisable').css('background-color','#FFD');
-
-		   
 	   });
+	   <?php if($makeInputsInactive){?>
+	    $('input.canDisable').attr('disabled','disabled');
+		$('input.canDisable').css('background-color','#EEE');
+	   <?php }?>
 	   
 });
 
