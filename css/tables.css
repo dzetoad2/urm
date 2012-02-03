@@ -10,7 +10,7 @@ table{
 td,th{
 	padding:6px;
 }
-tr.clickable, td.clickable, .facilityTypeId, td.customFacilityTypeId, tr.facilityTypeRow, img.editCustomFacility, img.editFacility{
+tr.clickable, td.clickable, img.clickable, .facilityTypeId, td.customFacilityTypeId, tr.facilityTypeRow, img.editCustomFacility, img.editFacility{
 	cursor: pointer;	
 	/*	  tr.userFacilityRow, tr.facilityRow,tr.surveyCategoryRow,tr.activityCategoryRow */
 }

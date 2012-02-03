@@ -35,15 +35,7 @@ if(isset($_POST['activityCategoryId'])){
 	
 	
 	
-	
-	
-	
-	
-	
-	
-//	$_SESSION['errorMsg'] = $em;
-//    header('Location: errorPage.php');
-//	exit();
+	 
 }
 if(isset($_POST['activityType'])){
 	$activityType = $_POST['activityType'];
@@ -57,17 +49,13 @@ if(isset($_POST['activityType'])){
 if($activityType == "activity" && $userId != 1){
 	$em = "Non-admin users may not create an Activity.";
 	throwMyExc($em);
-//	$_SESSION['errorMsg'] = $em;
-//	header('Location: errorPage.php');
-//	exit();
+ 
 }
 if($activityType == "customActivity"){
    if(!isset($_SESSION['surveyCategoryId'])){
 	 $em='Error: surveycategoryid not set. for creating custom activity, surveycategoryid (session) is required.';
 	 throwMyExc($em);
-	 //	 $_SESSION['errorMsg'] = $em;
-//	 header('Location: errorPage.php');
-//	 exit();
+ 
    }else{
    	$surveyCategoryId = $_SESSION['surveyCategoryId'];
    	$is_ca = 1;
@@ -80,23 +68,17 @@ if($activityType == "customActivity"){
 if(!isset($_POST['fid']) || trim($_POST['fid'])==''){
  	 $em='createactivity: post fid not set or is blank';
 	 throwMyExc($em);
-// 	 $_SESSION['errorMsg'] = $em;
-//	 header('Location: errorPage.php');
-//	 exit();
+ 
 }
 if(!isset($_POST['is_cf']) || trim($_POST['is_cf'])==''){
  	 $em='createactivity: post is_cf not set or is blank';
 	 throwMyExc($em);
- 	 //	 $_SESSION['errorMsg'] = $em;
-//	 header('Location: errorPage.php');
-//	 exit();	
+ 	
 }
 if(!isset($_POST['is_ca']) || trim($_POST['is_ca'])==''){
   	 $em='createactivity: post is_ca not set or is blank';
 	 throwMyExc($em);
-  	 //	 $_SESSION['errorMsg'] = $em;
-//	 header('Location: errorPage.php');
-//	 exit();	
+ 	
 }
 $fid=$_POST['fid'];
 $is_cf=$_POST['is_cf'];
@@ -246,9 +228,7 @@ require_once('urm_secure/createActivity/createActivityFormContents.php');  //con
 		else if($activityType=="activity") echo "Create and add to Activities";
 		else {
 		    $em="error: activityType not set";
-			$_SESSION['errorMsg'] = $em;
-			header('Location: errorPage.php');
-			exit();
+			throwMyExc($em);
 		}
 		?>" 
 	

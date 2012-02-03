@@ -212,7 +212,7 @@ echo "You are logged in as: ". $_SESSION['username'].'<br/>';
 <?php if(isset($activityId)){?>
 <a href="activities.php">Back to Activities</a>
 <?php } else if(isset($customActivityId)){?>
-<a href="activityCategories.php">Back to Activity Categories</a>
+<a href="activityCategories.php#activityCategories">Back to Activity Categories</a>
 <?php }?>
 </div>
 <hr/>

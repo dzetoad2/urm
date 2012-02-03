@@ -10,9 +10,7 @@ require_once 'urm_secure/surveyCategoriesFunctions.php';
 
 if(!isset($_SESSION['userid'])){
     $errorMsg= "error: userid not set";
-    $_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-  	exit();
+    throwMyExc($em);
 }
 $userId = $_SESSION['userid'];
 //expect facilityId. error if not there.
@@ -23,8 +21,8 @@ if(isset($_POST['userFacilityId'])){
 }else if(isset($_SESSION['userFacilityId'])){
  $userFacilityId = $_SESSION['userFacilityId'];
 }else{
-	  $_SESSION['errorMsg'] = "Critical Error - userFacilityId not found. This must come from myfacilities page!"; 
-      header('Location: errorPage.php');
+	  $em = "Critical Error - userFacilityId not found. This must come from myfacilities page!"; 
+      throwMyExc($em);
 }
 
 //get userfacil full bean.
@@ -205,7 +203,7 @@ $(document).ready(function() {
 <body>
 <div>
 <?php  echo "You are logged in as: ". $_SESSION['username'].'<br/>';
-if(defined('debug')){
+if(defined('DEBUG')){
 	echo  'Facility id just passed in is: '.$facilityId.'<br/>';
 }
 ?>

@@ -1,12 +1,14 @@
 <?php
 try{
 
-require_once 'urm_secure/functions.php';
-require_once 'urm_secure/surveyCategoriesFunctions.php';
-require_once 'urm_secure/breadCrumbFunctions.php';
-require_once 'urm_secure/sessionStateFunctions.php';
+require_once('urm_secure/functions.php');
+require_once('urm_secure/surveyCategoriesFunctions.php');
+require_once('urm_secure/breadCrumbFunctions.php');
+require_once('urm_secure/sessionStateFunctions.php');
+require_once('urm_secure/DAO/surveyCategoryRowsDAO.php');
 
-
+// use urm\urm_secure\DAO\surveyCategoryRowsDAO;
+ 
 if(!loggedin()){
 	//echo "userarea but not loggedin!<br/>\n";
 	header("Location: login.php");
@@ -14,9 +16,7 @@ if(!loggedin()){
 }
 if(!isset($_SESSION['username']) || !isset($_SESSION['userid'])){
 	$errorMsg="error: un or userid not set";
-	$_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-  	exit();
+	throwMyExc($errorMsg);
 }
 //--------- if userfacid or customfacid is not set, error!! ---
 if(!isset($_POST['userFacilityId']) && !isset($_POST['customFacilityId']) && !isset($_SESSION['userFacilityId']) && 
@@ -71,28 +71,31 @@ if(isset($_POST['userFacilityId'])){
 	$facilityName = getCustomFacilityName($customFacilityId);
 }else{
   $errorMsg='error: none are set:  userfacilityid post or session, customfacilityid post or session.';
-  $_SESSION['errorMsg'] = $errorMsg;
-  header('Location: errorPage.php');
-  exit();
+  throwMyExc($errorMsg);
 } 
 if(!isset($facilityName)){ 
-	//facilityname is not defined - a big error! so redirect to surveyHome.php.
-	//header("Location: surveyHome.php");
+	//facilityname is not defined - a big error!  
 	$errorMsg='surveycategories.php error: facilityname not set. line 69';
-	$_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-	exit();
+	throwMyExc($errorMsg);
 }
 if(!isset($is_cf)){
-	$errorMsg='is_cf not set! impossible to continue.';
-	$_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-  	exit();
+	$errorMsg='surveycategories page:  is_cf not set! impossible to continue.';
+	throwMyExc($errorMsg);
 }
 
 //------------------- NOW GET ALL THE ROW DATA , THIS IS AFTER ALL CHANGES HAVE BEEN UPDATED.---------------
-  $surveyCategoriesRows = getSurveyCategoriesRowsHtml($userId,$fid,$is_cf);
+  
 
+
+  $scrDao = getSurveyCategoriesRowsHtml($userId,$fid,$is_cf);
+
+  $surveyCategoriesRows = $scrDao->o; 
+  $atLeastOneSurveyCategoryIsComplete = $scrDao->atLeastOneSurveyCategoryIsComplete;
+  
+  
+  
+  
+  
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -102,7 +105,15 @@ if(!isset($is_cf)){
 <link rel="stylesheet" type="text/css" href="css/reset-min.css"/>
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
 <link rel="stylesheet" type="text/css" href="css/tables.css" />
+<link rel="stylesheet" href="js/jquery.alerts-1.1/jquery.alerts.css" type="text/css" />
+
+
+
 <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script src="js/jquery.alerts-1.1/jquery.alerts.js"></script>
+
+
+
 <script type="text/javascript" src="js/tables.js"></script>
 
 <script type="text/javascript">                                         
@@ -136,11 +147,18 @@ $(document).ready(function() {
 	   
 	   $(".surveyCategoryRow .drop").click(function() {
 		     var rowId = $(this).closest(".surveyCategoryRow").attr("id");
-		     var answer = confirm("Delete all answers for this survey category?")
-		     if (answer){
-		       $("#dropAction").children("input#surveyCategoryId").val(rowId);
-		       document.forms["dropAction"].submit();
-		     }
+
+
+		     jConfirm('Delete all answers for this survey category?', 'Confirm', function(r) {
+					if(r == true){
+						 $("#dropAction").children("input#surveyCategoryId").val(rowId);
+					       document.forms["dropAction"].submit();						
+					}
+					else{
+						
+					}
+				});
+		    
 	   });
 	   
 });
@@ -194,6 +212,18 @@ $(document).ready(function() {
      that user if a facility or survey category was chosen in error.  
      A user may clear answers via the "Clear my answers" box above, after which the survey category will be unlocked. </label> </p>
 </div>
+
+<?php if($atLeastOneSurveyCategoryIsComplete === true){?>
+<h4 class="notificationBanner" >When finished with all appropriate surveys, click the "Survey Home" link at the top of this page to return to Survey Home.</h4>
+<?php }elseif($atLeastOneSurveyCategoryIsComplete === false){
+
+}else{
+	$em ='surveycategories page: atleastonesurveycategoryiscomplete flag is neither true nor false.';
+	throwMyExc($em);
+}
+?>
+
+
 
 <form id="chooseAction" name="chooseAction"
 	action="activityCategories.php" method="post">

@@ -84,30 +84,6 @@ $surveyCategoryDoc = getSurveyCategoryDoc($surveyCategoryId);
 
 
 
-
-
-
-if(isset($_POST['dropAction2'])){
-	//===========THIS DROPS A CUSTOM ACTIVITY================
-	$customActivityId = $_POST['customActivityId'];
-   //now do the customactiv drop.
-     $res = deleteCustomActivity($userId, $customActivityId);
-     if($res['hasError']===false){
-     	$statusLabel = $res['msg'];
-     }else if($res['hasError']===true){
-     	$errorLabel = $res['msg'];
-     }else{
-     	$em = 'activitycategories:  del custom (user created) activity result does not make sense';
-     	throwMyExc($em);
-     }
-     
-      
-}
-
-
-//------------------- NOW GET ALL THE ROW DATA , THIS IS AFTER ALL CHANGES HAVE BEEN UPDATED.---------------
-
-
 if(isset($userFacilityId)){
  	$fid = $userFacilityId;
  	$is_cf = 0;
@@ -121,6 +97,83 @@ if(isset($userFacilityId)){
     throwMyExc($em);
  }
 
+
+
+
+
+
+
+
+if(isset($_POST['dropAction2'])){
+	
+	$customActivityId = $_POST['customActivityId'];
+   
+     if(isset($_POST['subAction'])) {
+     	$subAction = $_POST['subAction'];
+     }else{
+     	$em='dropaction2:  subaction was not in post! error.';
+     	throwMyExc($em);
+     }
+     if($subAction=="dropActivity"){
+     	     //===========THIS DROPS A CUSTOM ACTIVITY================
+     
+      //now do the customactiv drop.
+      $res = deleteCustomActivity($userId, $customActivityId);
+     
+     
+     }elseif($subAction=="dropActivityAnswer"){
+       //============THIS DROPS THE CUSTOM ACTIVITY'S ANSWER===============
+       $res = deleteCustomActivityAnswer($userId, $fid,$is_cf, $customActivityId);
+     	
+     }else{
+     	$em='post dropaction2:  subaction string is invalid';
+     	throwMyExc($em);
+     }
+
+     
+    
+     
+     if($res['hasError']===false){
+     	$statusLabel = $res['msg'];
+     }else if($res['hasError']===true){
+     	$errorLabel = $res['msg'];
+     }else{
+     	$em = 'activitycategories:  del custom (user created) activity, or activity answer, its result hasError msg does not make sense';
+     	throwMyExc($em);
+     } 
+      
+}
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+//  =============== debug - fill out this survey category entirely with skips. ========================
+if(isset($_POST['fillOutThisSurveyCategory'])){
+      	 fillOutThisSurveyCategory($userId, $fid, $is_cf,  $surveyCategoryId );
+	
+}
+ 
+ 
+
+//------------------- NOW GET ALL THE ROW DATA , THIS IS AFTER ALL CHANGES HAVE BEEN UPDATED.---------------
+
+
+
+ 
+ 
+ 
     $activityCategoriesRows = getActivityCategoriesRowsHtml($userId, $fid, $is_cf,  $surveyCategoryId);
     if($activityCategoriesRows === false){
 	$errorMsg = "Error in getmyfacilitiesrowshtml(un)";
@@ -161,43 +214,20 @@ if(!$customActivityRows = getCustomActivityRowsHtml($userId, $fid,$is_cf,1, $sur
 <link rel="stylesheet" href="css/jqueryui/1.7.1/themes/blitzer/jquery-ui.css" type="text/css" />
 <link rel="stylesheet" href="js/jquery.alerts-1.1/jquery.alerts.css" type="text/css" />
 
-
-
-
-
-
-
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>-->
-<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
-
+<!--<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
+<!--<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>-->
 <!--<script src="js/jquery.easy-confirm-dialog.js"></script>-->
-
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
 <script src="js/jquery.alerts-1.1/jquery.alerts.js"></script>
-
-
-
 <script type="text/javascript" src="js/tables_noAlternatingColor.js"></script>
-
-
 
 <script type="text/javascript">                                         
 $(document).ready(function() {
 	
-	   $("a#clearFacilitiesLink").click(function(e) {
-		   	 e.preventDefault();
-//       		 alert("Clearing all of your user's facility entries");
-		     document.forms["clearFacilitiesForm"].submit();
-	   });
-	   $("a#clearCustomFacilitiesLink").click(function(e) {
-		   	 e.preventDefault();
-     		 alert("Clearing all of your user created facility entries");
-		     document.forms["clearCustomFacilitiesForm"].submit();
-	   });
 	   $(".activityCategoryRow").click(function() {
 		     var rowId = $(this).closest(".activityCategoryRow").attr("id"); //children(".cell1:first")
 		     var title = $(this).closest(".activityCategoryRow").children(".nameCell:first").attr("id"); //children(".nameCell:first")
-//		     alert("Activity: "+title +" was chosen.");
 		     //now add to the form 'chooseAction' and submit it.
 		     $("#chooseAction").children("input#activityCategoryId").val(rowId);
 		     document.forms["chooseAction"].submit();
@@ -205,7 +235,6 @@ $(document).ready(function() {
 	   $(".activityCategoryDocRow").click(function() {
 		     var rowId = $(this).closest(".activityCategoryDocRow").attr("id"); //children(".cell1:first")
 		     //var title = $(this).closest(".activityCategoryDocRow").children(".nameCell:first").attr("id"); //children(".nameCell:first")
-//		     alert("Activity: "+title +" was chosen.");
 		     //now add to the form 'chooseAction' and submit it.
 		     $("#chooseAction2").children("input#activityCategoryDocId").val(rowId);
 		     document.forms["chooseAction2"].submit();
@@ -214,7 +243,6 @@ $(document).ready(function() {
 	   $(".customActivityRow .nameCell").click(function() {
 		     var rowId = $(this).closest(".customActivityRow").attr("id");
 		     //var title = $(this).closest(".customActivityRow").children(".nameCell:first").attr("id");
-//		     alert("User Created Activity: "+title +" was chosen.");
 		     //now add to the form 'chooseAction' and submit it.
 		     $("#viewAction2").children("input#customActivityId").val(rowId);
 		     
@@ -227,14 +255,39 @@ $(document).ready(function() {
 		     document.forms["editAction2"].submit();
 			 
 	   });
-	   $(".customActivityRow .drop").click(function() {
-		   var answer = confirm("Delete this User Created Activity?")
-		   if (answer){
-		     var rowId = $(this).closest(".customActivityRow").attr("id");
-		     $("#dropAction2").children("input#customActivityId").val(rowId);
-		     document.forms["dropAction2"].submit();
-		   }
-	   });  	
+	   $(".customActivityRow .dropActivity").click(function() {
+		   var rowId = $(this).closest(".customActivityRow").attr("id");
+		   jConfirm('Delete this User Created Activity?', 'Confirm', function(r) {
+				if(r == true){
+ 				     $("#dropAction2").children("input#customActivityId").val(rowId);
+				     $("#dropAction2").children("input#subAction").val("dropActivity");
+				     document.forms["dropAction2"].submit();
+				}
+				else{
+					//do nothing
+				}
+			});
+
+	   });
+	   $(".customActivityRow .dropActivityAnswer").click(function() {
+			 var rowId = $(this).closest(".customActivityRow").attr("id");
+			   jConfirm('Delete your answer (for this facility) for this User Created Activity?', 'Confirm', function(r) {
+				 if(r == true){
+				     $("#dropAction2").children("input#customActivityId").val(rowId);
+				     $("#dropAction2").children("input#subAction").val("dropActivityAnswer");
+				     
+				     document.forms["dropAction2"].submit();
+				 }
+				 else{
+					//do nothing
+				 }
+			    });
+	   });
+
+
+
+
+	   	
 
 	   $("#createCustomActivity").click(function(e) {
 		   	 
@@ -242,76 +295,13 @@ $(document).ready(function() {
 		     e.preventDefault();
 		   });
 
-
-
-
-
-
 //	   $("#doneWithSurveyCategoryButton").easyconfirm({locale: { title: 'Confirm', button: ['No','Yes']}});
-
 	   
 	   $("#doneWithSurveyCategoryButton").click(function(e) {
-			 //javascript popup, yes or no.
-//		     var answer = confirm("Are there other surveys you wish to complete for this facility?")
-//		     if (answer){
-////		       $("#dropAction").children("input#surveyCategoryId").val(rowId);
-////		       document.forms["dropAction"].submit();
-//			   //go to the finish page
-//		    	 window.location = 'surveyFinished.php';
-//		     }	
-//		     $dialog.dialog('open');
-				// prevent the default action, e.g., following a link
-				
-//	    $("#yesno").click(function() {
-//			alert("You clicked yes");
-//		});
-			
-			
-			jConfirm('Are there other surveys you wish to complete for this facility?', 'Confirmation Dialog', function(r) {
-				if(r == true){
-					window.location = 'surveyCategories.php';
-    				//jAlert('Confirmed true: ' + r, 'Confirmation Results');
-				}
-				else{
-					window.location = 'surveyFinished.php';
-	    			//jAlert('Confirmed false: ' + r, 'Confirmation Results');
-				}
-				
-			});
-			
-				
-//			alert("You clicked yes");
-
-
-
-
-
-			//click yes:   go up to surveyCategories.
-			//click no:  log out.	
-
-			
-			
+			window.location = 'surveyCategories.php';
 			e.preventDefault();
-			  
-			 
 	   });
-
-
 		
-	   //document.ready:
-//	   var $dialog = $('<div class="dialog"></div>')
-//		.html('This dialog will show every time!')
-//		.dialog({
-//			autoOpen: false,
-//			title: 'Basic Dialog'
-//		});
-
-	    
-
-
-
-
-
 
 	   
 });
@@ -346,7 +336,24 @@ with other surveys. </h4>
 
 
 
-<h3>Activity Categories for <?php echo $surveyCategoryName;?>:</h3>
+
+
+
+<?php if(defined('debugFillOutAction')){?>
+ <form id="fillOutAction" name="fillOutAction"
+	action="activityCategories.php" method="post">
+	<input type="submit"
+	   name="fillOutThisSurveyCategory" value="DEBUG TOOL BUTTON - Fill out this entire survey category with Skips" />
+</form>
+<?php }?>
+
+
+
+
+
+
+
+<h3><a class="noLink" id="activityCategories" name="activityCategories">Activity Categories for <?php echo $surveyCategoryName;?>:</a></h3>
 <p>Click on an activity category to see its activities.</p>
 <div>
 <table>
@@ -395,7 +402,8 @@ with other surveys. </h4>
 	<thead>
 		<tr>
 		<th>Edit</th>
-		<th>Drop</th>
+		<th>Drop Activity</th>
+		<th>Drop Answer</th>
 	   <?php if(defined('DEBUG')){?>
 		<th>Id</th>
 	   <?php }?>
@@ -411,11 +419,12 @@ with other surveys. </h4>
 </table>
 
 <p>
-<b>Changing a Created Activity</b><br/>
- You may edit or drop custom activities after you have created them. <br/>
+<b>Changing a User Created Activity</b><br/>
+ You may edit or drop custom activities after you have created them (provided they are unanswered in any of your facilities) <br/>
  To edit the name or description, click on the edit pen.   <br/>
  To edit survey answer data, click on the activity title. <br/>
- You may drop the activity by clicking the red X.
+ To erase your survey answer for this activity, click the appropriate red X. 
+ You may drop the activity by clicking the appropriate red X.
 </p>
 
 
@@ -486,6 +495,8 @@ as you like.
 <form id="dropAction2" name="dropAction2"
 	action="activityCategories.php" method="post">
 	<input type="hidden"
+	id="subAction" name="subAction" value="nothing" />
+	<input type="hidden"
 	id="customActivityId" name="customActivityId" value="nothing" />
 	<input type="hidden"
 	id="dropA2" name="dropAction2" value="" />
@@ -516,4 +527,40 @@ if(defined('DEBUG')){
 <?php 
 }catch(Exception $e){
  goErrorPage($e);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 	   //document.ready:
+//	   var $dialog = $('<div class="dialog"></div>')
+//		.html('This dialog will show every time!')
+//		.dialog({
+//			autoOpen: false,
+//			title: 'Basic Dialog'
+//		});
+
 }?>
+
+
+
+
+
+
+
+
+
+
+

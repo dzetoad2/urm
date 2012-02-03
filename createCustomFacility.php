@@ -8,14 +8,10 @@ require_once 'urm_secure/sessionStateFunctions.php';
 if(!isset($_SESSION['userid'])){
   if(defined('DEBUG')){
     $errorMsg="error: userid not set (debug on)";
-    $_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-	exit();
+    throwMyExc($errorLabel);
   }else{
   	$errorMsg="error: userid not set";
-  	$_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-  	exit();
+  	throwMyExc($errorLabel);
   }
 }
 $userId = $_SESSION['userid'];

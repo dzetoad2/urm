@@ -276,7 +276,7 @@ echo "You are logged in as: ". $_SESSION['username'].'<br/>';
 
 ?>
 <a href="logout.php">Log out</a> | 
-<a href="activityCategories.php">Back to Activity Categories</a>
+<a href="activityCategories.php#activityCategories">Back to Activity Categories</a>
 <?php if(isset($statusLabel) && $statusLabel!=''){?>
 <h4 id="statusLabel"><?php echo $statusLabel; ?></h4>
 <?php }?>
@@ -322,7 +322,7 @@ echo "You are logged in as: ". $_SESSION['username'].'<br/>';
 </div>
 <hr/>
 <p>
-  Go back to <a href="activityCategories.php">Activity Categories</a>.
+  Go back to <a href="activityCategories.php#activityCategories">Activity Categories</a>.
 </p>
 
 

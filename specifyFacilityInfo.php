@@ -9,9 +9,7 @@ require_once 'urm_secure/surveyCategoriesFunctions.php';
 
 if(!isset($_SESSION['userid'])){
     $errorMsg= "error: userid not set";
-    $_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-  	exit();
+    throwMyExc($errorMsg);
 }
 $userId = $_SESSION['userid'];
 //expect facilityId. error if not there.
@@ -23,8 +21,8 @@ if(isset($_POST['facilityId'])){
  $facilityId = $_SESSION['facilityId'];
 }else{
     if(defined('debug')){
-	  $_SESSION['errorMsg'] = "Critical Error - facilityId not found. This must come from choosefacility page!"; 
-      header('Location: errorPage.php');
+	  $em = "debug on - specifyfacilityinfo page - Critical Error - facilityId not found. This must come from choosefacility page!"; 
+      throwMyExc($em);
 	}else{
 	 header("Location: chooseFacility.php");
 	}
@@ -69,8 +67,8 @@ if($ufBean === '') //  there is no first owner. leave field blank. and keep edit
   if($facilityOwnerId === ''){
     //this doesnt make sense!!
     //$statusLabel .= 'no one owns this facility yet';
-    $_SESSION['errorMsg'] = 'getOriginalUserUserFacilityBean: userfacility bean came back but its userId was blank - probably impossible?';
-    header('Location: errorPage.php');
+    $em = 'getOriginalUserUserFacilityBean: userfacility bean came back but its userId was blank - probably impossible?';
+    throwMyExc($em);
   }else if($facilityOwnerId == $userId){
 	//i am the owner, so gray out the answers and give a 'already added' message.
 	$errorLabel .= 'This facility is already added to your account.  To change 
@@ -91,26 +89,8 @@ if($ufBean === '') //  there is no first owner. leave field blank. and keep edit
 
 }
 
-
-//  $_SESSION['errorMsg'] = 'Unknown error from getFacilityOwnerId';
-// header('Location: errorPage.php');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
+ 
 
 
 

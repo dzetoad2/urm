@@ -14,9 +14,7 @@ require_once('urm_secure/facilityTypeFunctions.php');
 
 if(!isset($_POST['userFacilityId']) && !isset($_POST['customFacilityId'])){
 	$errorMsg="neither  userFacilityId nor customFacilityId was set - error.";
-	$_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-	exit();
+	throwMyExc($errorMsg);
 }
 if(isset($_POST['userFacilityId'])){
 	$userFacilityId = $_POST['userFacilityId'];
@@ -36,9 +34,7 @@ if(isset($_POST['facilityName'])){
 $facilityName = $_POST['facilityName'];
 }else{
 	$errorMsg='choosefacilitytype.php: facilityname not set!';
-	$_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-	exit();
+	throwMyExc($errorMsg);
 }
 if(trim($fid)!='' && trim($is_cf)!=''){
   	$facilityTypeRows = getFacilityTypeRowsHtml($fid,$is_cf);
@@ -88,7 +84,7 @@ $(document).ready(function() {
 <h3>Choose facility type for: 
 <?php 
  
-echo $facilityName. ', ';
+echo $facilityName. ' ';
  if(isset($_POST['userFacilityId']) && defined('debug')){
    echo 'userfacilityid is set, it is:'.$_POST['userFacilityId'];
  }

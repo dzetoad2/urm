@@ -15,9 +15,7 @@ if(!loggedin()){
 //----------end required on every secure page----------------
 if(!isset($_SESSION['userid'])){
 	$errorMsg='userid not set';
-	$_SESSION['errorMsg'] = $errorMsg;
-	header('Location: errorPage.php');
-	exit();
+	throwMyExc($errorMsg);
 }
 $userId = $_SESSION['userid'];
 ?>

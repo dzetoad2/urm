@@ -19,9 +19,8 @@ if ( isset($_POST['chooseFacility'])){
   	
   	
   	//throw exception instead???
-  	$_SESSION['errorMsg'] = "Error: Username not set, impossible to continue! <br/>";
-  	header('Location: errorPage.php');
-  	exit();
+  	$em = "Error: Username not set, impossible to continue! <br/>";
+  	throwMyExc($em);
   	
   	
   	
