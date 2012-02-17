@@ -1,38 +1,1 @@
-.content{
-        width: 650px;
-        height: auto;
-        border: 3px solid #ccccff;
-        padding: 5px;
-        font-family: Tahoma, sans-serif;
-        /*background-image: url(bg.gif)*/;
-        /*background-position: bottom right*/;
-        /*background-repeat: no-repeat*/;
-}
-.editcontent{
-        width: 650px;
-        height: 200px;
-        border: 3px solid #ccccff;
-        padding: 5px;
-        font-family: Tahoma, sans-serif;
-        /*background-image: url(bg.gif)*/;
-        /*background-position: bottom right*/;
-        /*background-repeat: no-repeat*/;
-}
-.widefield{
-	width: 20em;
-}
-.medfield{
-	width: 13em;
-}
-.smallfield{
-	width: 8em;
-}
-.tinyfield{
-	width: 5em;
-}
-.button{
-	height:4em;
-	margin-right:2em;
-	
-	
-}
+.content{        /*width: 650px;        height: auto;*/        border: 1px solid #98B2CC;        padding: 15px;        font-family: Helvetica, Arial, sans-serif;        /*background-image: url(bg.gif)*/;        /*background-position: bottom right*/;        /*background-repeat: no-repeat*/;}.editcontent{        width: 650px;        height: 200px;        border: 3px solid #ccccff;        padding: 5px;        font-family: Helvetica, Arial, sans-serif;        /*background-image: url(bg.gif)*/;        /*background-position: bottom right*/;        /*background-repeat: no-repeat*/;}.widefield{	width: 20em;}.medfield{	width: 13em;}.smallfield{	width: 8em;}.tinyfield{	width: 5em;}.button{	height:4em;	margin-right:2em;		}
