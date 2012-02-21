@@ -159,9 +159,7 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 <p>If you have previously registered, 
 provide your access information to enter the survey again. 
 If you have not already done so, register here to access survey. 
-If another person at your facility has already registered you will 
-not be able to register separately but will need to get the access 
-information from:  <b></b><br/> <br/>  
+<b></b><br/> <br/>  
 </p>
 <p>
  If you encounter difficulty in accessing the survey, please contact:

@@ -25,16 +25,8 @@ if(isset($_POST['activityCategoryId'])){
 	
 	
 	//$em = 'activityCategoryId neither in session nor post: required.';  //
-	 
-	
-	
-	
 	
 	//throwMyExc($em);
-	
-	
-	
-	
 	 
 }
 if(isset($_POST['activityType'])){
@@ -55,13 +47,17 @@ if($activityType == "customActivity"){
    if(!isset($_SESSION['surveyCategoryId'])){
 	 $em='Error: surveycategoryid not set. for creating custom activity, surveycategoryid (session) is required.';
 	 throwMyExc($em);
- 
    }else{
    	$surveyCategoryId = $_SESSION['surveyCategoryId'];
    	$is_ca = 1;
    }
+   
+   
+   
 }else{
-	$is_ca = 0;
+	$em='Error: must be custom activity. this says its normal activity - impossible!';
+	throwMyExc($em);
+//	$is_ca = 0;
 }
 //====NEW REQUIREMENT... MUST HAVE FACILITY ID, AND KNOW IF ITS IS_CF 1 OR 0======
 // VALIDATE POST FID, IS_CF, IS_CA:
@@ -118,7 +114,7 @@ if ( isset($_POST['createSubmit'])){
  		    $is_cf = $_POST['is_cf'];
 		    if($activityType == "customActivity"){
 		      $activityTypeLabel = "custom";
-			  $aid = createCustomActivity( $title, $descr, $surveyCategoryId, $userId);  // need to add fid + is_cf to params.
+			  $aid = createCustomActivity( $title, $descr, $surveyCategoryId, $userId, $fid, $is_cf);  // need to add fid + is_cf to params.
 		    }else if($activityType == "activity"){
 		      $rowsAffected = 
 			  createActivity($title, $descr, $activityCategoryId);
