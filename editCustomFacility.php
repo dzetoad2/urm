@@ -143,7 +143,7 @@ if ( isset($_POST['editSubmit'])){
 		 $otherIntensiveCareBeds,
 		 $pediatricIntensiveCareBeds);
 		 if($rowsAffected == 0){
-		 $errorLabel.="Nothing to update<br/>";
+		 $errorLabel.="No values were changed<br/>";
 		 }elseif($rowsAffected==1){
 		 $_SESSION['updatedCustomFacilitySuccess']='true';
 		 header("Location: myFacilities.php");
