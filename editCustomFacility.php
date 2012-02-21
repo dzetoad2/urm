@@ -96,28 +96,28 @@ if ( isset($_POST['editSubmit'])){
 		//-------------
 		if($totalFacilityBeds == "")
 		 $errorLabel .= "Please enter the total number of facility beds<br/>";
-		else if(!isPosInt($totalFacilityBeds))
+		else if(!isNonNegInt($totalFacilityBeds))
 		 $errorLabel .= "Total Facility Beds must be a positive integer<br/>";
 		//--------
 		if($medicalSurgicalIntensiveCareBeds == "")
 		 $errorLabel .= "Please enter the total number of medical surgical intensive care beds <br/>";
-		else if(!isPosInt($medicalSurgicalIntensiveCareBeds))
-		 $errorLabel .= "Total medical surgical intensive care beds must be a positive integer<br/>";
+		else if(!isNonNegInt($medicalSurgicalIntensiveCareBeds))
+		 $errorLabel .= "Total medical surgical intensive care beds must be zero or a positive integer<br/>";
 		//----------
 		if($neoNatalIntensiveCareBeds == "")
 		 $errorLabel .= "Please enter the total number of neo natal intensive care beds <br/>";
-		else if(!isPosInt($neoNatalIntensiveCareBeds))
-		 $errorLabel .= "Total neo natal intensive care beds must be a positive integer<br/>";
+		else if(!isNonNegInt($neoNatalIntensiveCareBeds))
+		 $errorLabel .= "Total neo natal intensive care beds must be zero or a positive integer<br/>";
 		//---------
 		if($otherIntensiveCareBeds=="")
 		 $errorLabel .= "Please enter the total number of other intensive care beds<br/>";
-		else if(!isPosInt($otherIntensiveCareBeds))
-		 $errorLabel .= "Total number of other intensive care beds must be a positive integer<br/>";
+		else if(!isNonNegInt($otherIntensiveCareBeds))
+		 $errorLabel .= "Total number of other intensive care beds must be zero or a positive integer<br/>";
 		//------
 		if($pediatricIntensiveCareBeds=="")
 		 $errorLabel .= "Please enter the total number of pediatric intensive care beds <br/>";
-		else if(!isPosInt($pediatricIntensiveCareBeds))
-		 $errorLabel .= "Total pediatric intensive care beds must be a positive integer<br/>";
+		else if(!isNonNegInt($pediatricIntensiveCareBeds))
+		 $errorLabel .= "Total pediatric intensive care beds must be zero or a positive integer<br/>";
 		if($errorLabel==''){
 		  //check for sum total.
 		  $sumICB = $medicalSurgicalIntensiveCareBeds + $neoNatalIntensiveCareBeds + $otherIntensiveCareBeds + $pediatricIntensiveCareBeds; 
