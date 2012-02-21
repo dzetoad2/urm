@@ -165,7 +165,7 @@ If you have not already done so, register here to access survey.
  If you encounter difficulty in accessing the survey, please contact:
 </p>
 <p> 
- Email: urm_support@aarc.org
+ Email: <a   href="mailto:urm_support@aarc.org" >urm_support@aarc.org</a>
 </p>
 <p>
 
