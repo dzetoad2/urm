@@ -159,8 +159,13 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 <p>If you have previously registered, 
 provide your access information to enter the survey again. 
 If you have not already done so, register here to access survey. 
-<b></b><br/> <br/>  
+   
 </p>
+<p>
+<img src="images/warning_notice.JPG" alt="warning notice" height="21" width="21" />
+<span><b>Warning:  Do not use the browser's back button while in the survey system.</b></span>
+</p>
+ 
 <p>
  If you encounter difficulty in accessing the survey, please contact:
 </p>
