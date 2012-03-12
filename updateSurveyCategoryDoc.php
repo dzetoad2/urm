@@ -70,11 +70,12 @@ Survey Category id:
 <input type="text" id="id" name="id"></input>  
 Doc: <br />
 <textarea class="content" name="doc"  >
-</textarea></br>
+</textarea>
+<br/>
   <input   type="submit" id="updateSCD" name="updateSCD" value="update SCD" />
  </form>
 </body>
- 
+</html>
  <?php 
 }catch(Exception $e){
   goErrorPage($e);

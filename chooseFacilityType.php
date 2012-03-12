@@ -102,11 +102,13 @@ echo $facilityName. ' ';
 
 <table>
 	<thead>
+	 <tr> 
 		<?php if(defined('DEBUG')){?>
 		<th>Id</th>
 		<?php }?>
 		<th>Name</th>
 		<th>Description</th>
+	  </tr>
 	</thead>
 	<tbody>
 	<?php

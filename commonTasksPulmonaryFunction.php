@@ -26,12 +26,12 @@
  <a href="javascript:history.go(-1)" style="text-decoration:none" ><< Back || </a>-->
 </div>
 
-<div class="content" readonly="readonly">
+<div class="content"   >
 <h4>TASKS COMMON TO ALL ACTIVITIES</h4>
 <h5>&nbsp;Pulmonary Function</h5>
 <hr/>
 </div>
-<div class="content" readonly="readonly">
+<div class="content"   >
 <p>The tasks listed here are common to most of the activities described in
 this section.  The amount of time required to perform these tasks is to
 included in the time standard for all applicable activities.  Although

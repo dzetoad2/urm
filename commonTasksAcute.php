@@ -26,11 +26,11 @@
  <a href="javascript:history.go(-1)" style="text-decoration:none" ><< Back || </a>-->
 </div>
 
-<div class="content" readonly="readonly">
+<div class="content"  >
 <h4>TASKS COMMON TO ALL ACTIVITIES</h4>
 <hr/>
 </div>
-<div class="content" readonly="readonly">
+<div class="content"  >
 <p>Most of the clinical procedures with time standards identified in this
 Manual are accompanied by a list of components of the activity. This
 list is to clarify the scope of the activity covered by a specific time
