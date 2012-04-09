@@ -1,7 +1,4 @@
-.inputBox{
-	display:block;  /* inline-block;*/
-	margin: 3px 2.5px; 
-}
+
 .left{
 	width:20em;
 	float:left;
@@ -33,9 +30,17 @@ form ol, form ul{
 li{
  margin: 8px 10px;
 }
+.inputBox{
+	display:block;  /* inline-block;*/
+	margin: 3px 2.5px; 
+}
 .inputunit input, li input, .textInput input, fieldset input{
 	background-color:#FFD;
 	margin:0px;
+}
+.inputunit{
+	display: block;
+	 
 }
 .button{
 /*-webkit-border-radius: 25px;
