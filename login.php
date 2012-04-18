@@ -132,8 +132,9 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
  <legend><span>Login</span></legend>
  <ol>
   <li>
-   <label>Username:</label><br/>
+   <label>Username (email address):</label><br/>
    <input type="text" name="username" />
+   <span class="gray">Do Not Use AARC Member Username and Password</span>
   </li>
   <li>
    <label>Password:</label><br/>
