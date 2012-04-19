@@ -207,12 +207,12 @@ include("includes/header.php");
 ?>
 
 <div>
-<?php  echo "You are logged in as: ". $_SESSION['username'].'<br/>';
+<?php   
 if(defined('DEBUG')){
 	echo  'Facility id just passed in is: '.$facilityId.'<br/>';
 }
 ?>
-<a href="logout.php">Log out</a> | 
+ 
 <a href="myFacilities.php">Return to My Facilities page</a>
 </div>
 <hr/>
