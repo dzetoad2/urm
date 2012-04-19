@@ -164,7 +164,7 @@ If you have not already done so, register here to access survey.
 </p>
 <p>
 <img src="images/warning_notice.JPG" alt="warning notice" height="21" width="21" />
-<span><b>Warning:  Do not use the browser's back button while in the survey system.</b></span>
+<span><b>Warning:  Do not use the browser's back button while in the survey system.  Javascript must be enabled.</b></span>
 </p>
  
 <p>
