@@ -146,7 +146,7 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
  </ol>
   </fieldset>
   </div>
-  <div> 
+  <div>
     <input type="submit" name="login" value="Log in" />
   </div>
 </form>
