@@ -58,7 +58,7 @@ else{
 ?>
   <h4 class="errorLabel">An error has occurred. You may go to the home page and proceed to try again. 
   If this inhibits you from completing the survey,
-     please contact the system administrator.</h4>
+     please contact the system administrator (dubbs@aarc.org).</h4>
 <?php }?>
 </div> 
 <?php 
