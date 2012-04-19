@@ -52,6 +52,7 @@ if($errorLabel==""){
 //5.   Send the email.  If the email fails, do errorlabel.   
 // 	If the email succeeds, then do the database update on password hash.
 if($errorLabel==''){
+	//die('sendpw reset email here to: '.$username);
   $msg = sendPasswordResetEmail($username);
   $o = strstr($msg,'Successful');
   if($o==false){
