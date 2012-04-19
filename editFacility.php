@@ -201,6 +201,11 @@ $(document).ready(function() {
 <title>Edit Facility Info</title>
 </head>
 <body>
+<?php
+// include the top header bar
+include("includes/header.php");
+?>
+
 <div>
 <?php  echo "You are logged in as: ". $_SESSION['username'].'<br/>';
 if(defined('DEBUG')){
