@@ -9,7 +9,7 @@ require_once 'urm_secure/surveyCategoriesFunctions.php';
 
 
 if(!isset($_SESSION['userid'])){
-    $errorMsg= "error: userid not set";
+    $em= "error: userid not set";
     throwMyExc($em);
 }
 $userId = $_SESSION['userid'];

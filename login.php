@@ -48,6 +48,7 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 	 $db_password = $row['pwhash'];
 	 $userId = $row['id'];
 	 $pwhash = constant("SALT").sha1($password.constant("SALT"));
+	 $ip = $_SERVER['REMOTE_ADDR'];
 	    if(  $pwhash == $db_password){         // md5($password)
 		    $loginok = TRUE;	
 		}else{
@@ -84,12 +85,12 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 	 		loadState($userId);
 	 		$_SESSION['userid'] = $userId;
 //	 		 ('login.php:  done loadstate, nothing happened, about to redir to home.php');
+			logLoginSuccess($username,$password,$ip);
 	 		header("Location: home.php");
 			//echo 'login ok true:  header go to home.php here.';
 			exit();       //some browseres dont respect the header redirects so exit here.
 		 }else{
 			$errorLabel .= "The login was unsuccessful.";
-			$ip = $_SERVER['REMOTE_ADDR'];
 			 
 			logLoginError($username,$password,$ip);
 		 }
