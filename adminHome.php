@@ -7,7 +7,7 @@ require_once 'urm_secure/facilityFunctions.php';
 require_once 'urm_secure/facilityTypeFunctions.php';
 require_once 'urm_secure/modProfileFunctions.php';
 
-if(!loggedin()){
+if(!loggedinAdmin()){
   //echo "userarea but not loggedin!<br/>\n";
   header("Location: login.php");
   exit();
@@ -43,7 +43,7 @@ if(defined('DEBUG')){
 <a href="home.php">Home</a>
 <hr/>
 <h3>Admin pages:</h3>
-<a href="surveyStats.php">See table of users and survey response counts</a> | 
+<a href="surveyStats1.php">See table of users and survey response counts</a> | 
  
 </body>
 </html>

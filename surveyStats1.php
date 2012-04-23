@@ -6,7 +6,7 @@ require_once 'urm_secure/functions.php';
 require_once 'urm_secure/surveyStatsFunctions.php';
 require_once 'urm_secure/sessionStateFunctions.php';
 
-if(!loggedin()){
+if(!loggedinAdmin()){
   //echo "userarea but not loggedin!<br/>\n";
   header("Location: login.php");
   exit();

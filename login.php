@@ -53,9 +53,8 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 		}else{
 			$loginok = FALSE;
 		}
-		
 		if($loginok==TRUE){
-			 $authtoken = createAuthToken($username); 
+			 $authtoken = createAuthToken($username);
 			 if($rememberme=="on"){  //the checkbox thing in html post.
 				setcookie("username",    $username,     time()+7200);
 			 	setcookie("authtoken",     $authtoken,      time()+7200);            //cookie has expire time set here.
@@ -80,9 +79,10 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 	 	 	}
 	 	 	//------------------------------------------------
 	 		//$row = mysql_fetch_assoc();   //associative. this is first row of the result.
-	 		$db_password = $row['pwhash'];
+	 		$db_password = $row['pwhash'];  //REPEAT, NOT NEEDED
 		    //finally, relocate to user area.
 	 		loadState($userId);
+	 		$_SESSION['userid'] = $userId;
 //	 		 ('login.php:  done loadstate, nothing happened, about to redir to home.php');
 	 		header("Location: home.php");
 			//echo 'login ok true:  header go to home.php here.';
