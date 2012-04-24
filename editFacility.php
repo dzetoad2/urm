@@ -213,9 +213,9 @@ if(defined('DEBUG')){
 }
 ?>
  
-<a href="myFacilities.php">Return to My Facilities page</a>
+
 </div>
-<hr/>
+ 
 <?php if(isset($errorLabel) && $errorLabel!=''){?>
 <h4 class="errorLabel"><?php echo $errorLabel;?></h4>
 <?php }?>
@@ -322,6 +322,8 @@ if(defined('DEBUG')){
   Total staffed facility beds must be less than 26 if "Critical Access Hospital" is selected.<br/>
   Click the "Go" button to edit this facility in your account list.
 </p>
+<p class="footerNav">    <a href="myFacilities.php">Return to My Facilities page (Discard Changes)</a>   </p>
+
 </body>
 </html>
 <?php 

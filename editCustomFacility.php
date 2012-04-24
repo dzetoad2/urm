@@ -215,7 +215,7 @@ $(document).ready(function() {
  <a href="logout.php">Log out</a> | 
  <a href="myFacilities.php">Return to My Facilities page</a>
 </div>
-<hr/>
+ 
 <?php if(isset($errorLabel) && $errorLabel!=''){?>
 <h4 class="errorLabel"><?php echo $errorLabel;?></h4>
 <?php }?>
@@ -353,6 +353,8 @@ $(document).ready(function() {
 </div>
 </div>
 </form>
+
+<p class="footerNav">    <a href="myFacilities.php">Return to My Facilities page (Discard Changes)</a>   </p>
 
 </body>
 </html>
