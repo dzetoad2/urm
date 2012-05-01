@@ -28,7 +28,7 @@ if($userId != 1){
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
 <link rel="stylesheet" type="text/css" href="css/tables.css" />
 
-<title>Survey stats 1</title>
+<title>Survey stats 2</title>
 </head>
 <body>
 <?php
@@ -51,22 +51,20 @@ if($userId != 1){
 
 
 <div>
-<h3>Survey stats 1:</h3>
+<h3>Survey stats 2:</h3>
 
 <form id="chooseAction" name="chooseAction" action="myFacilities.php"
 	method="post">
 	<input type="hidden" id="facilityTypeId" name="facilityTypeId" value="nothing" /></form>
 
 <?php 
-$rows = getStats1RowsHtml($userId);
+$rows = getStats2RowsHtml($userId);
 ?>
 <table>
 	<thead>
 	  <tr> 
-		<th>User Id (id in user table)</th>
-		<th>Username</th>
-		<th>Total number of <br/>facilities registered<br/> (normal plus custom)</th>
-		<th>Total number of <br/>survey answers (aggregate, all facilities)<br/>this user has answered </th>
+		<th>Survey Type</th>
+		<th>Total number completed</th>
 	  </tr>
 	</thead>
 	<tbody>

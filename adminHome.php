@@ -23,7 +23,7 @@ $userId = $_SESSION['userid'];
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Admin HomePage</title>
+<title>Admin Pages</title>
 </head>
 <body>
 <?php
@@ -42,8 +42,9 @@ if(defined('DEBUG')){
 <a href="logout.php">Log out</a> |
 <a href="home.php">Home</a>
 <hr/>
-<h3>Admin pages:</h3>
+<h3>Admin Pages:</h3>
 <a href="surveyStats1.php">See table of users and survey response counts</a> | 
+<a href="surveyStats2.php">See stats 2</a> 
  
 </body>
 </html>
