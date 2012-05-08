@@ -62,6 +62,7 @@ if ( isset($_POST['editSubmit'])){
 	$address = trim($_POST['address']);
 	$city = trim($_POST['city']);
 	$state = trim($_POST['state']);
+	if($state == 'Other') $state = '--';
 	$zip = trim($_POST['zip']);
 	$phone = trim($_POST['phone']);
 	//$criticalAccessHospital = trim($_POST['criticalAccessHospital']);
@@ -156,7 +157,7 @@ if ( isset($_POST['editSubmit'])){
 } //end if post submit
 
         //savePostAndSessionVars($userId,$_POST,$_SESSION,"editCustomFacility.php");
- $stateRows = getStatesRowsHtml($state);
+ $stateRows = getStatesRowsHtml($state);  //this does the transofrmation of '--' to 'Other'.
 
 
 ?>
