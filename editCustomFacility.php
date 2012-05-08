@@ -254,6 +254,7 @@ $(document).ready(function() {
   <select name="state" id="state">
   <?php echo $stateRows; ?>
   </select>
+  <label class="gray italic">* If your facility is outside of the US, please specify so in the Facility Address box above</label>
  </li>
  <li>
   <label>Zip:*</label><br/>
