@@ -65,7 +65,8 @@ $rows = getStats1RowsHtml($userId);
 	  <tr> 
 		<th>User Id (id in user table)</th>
 		<th>Username</th>
-		<th>Total number of <br/>facilities registered<br/> (normal plus custom)</th>
+		<th>Total number of <br/>facilities registered<br/> (normal)</th>
+		<th>Total number of <br/>facilities registered<br/> (custom)</th>
 		<th>Total number of <br/>survey answers (aggregate, all facilities)<br/>this user has answered </th>
 	  </tr>
 	</thead>
