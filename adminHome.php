@@ -24,6 +24,8 @@ $userId = $_SESSION['userid'];
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Admin Pages</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" type="text/css" href="css/tables.css" />
 </head>
 <body>
 <?php
@@ -45,7 +47,8 @@ if(defined('DEBUG')){
 <h3>Admin Pages:</h3>
 <a href="surveyStats1.php">Stats page 1:  Table of users and survey response counts</a> <br/> 
 <a href="surveyStats2.php">Stats page 2:</a>  <br/>
-<a href="surveyStats3.php">Stats page 3:</a>  <br/>
+<a href="surveyStats3.php">Stats page 3: Incomplete surveys</a>  <br/>
+ <a href="surveyStats4.php">Stats page 4: All surveys: Not started, incomplete, complete</a>  <br/>
  
 </body>
 </html>
