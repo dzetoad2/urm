@@ -43,8 +43,9 @@ if(defined('DEBUG')){
 <a href="home.php">Home</a>
 <hr/>
 <h3>Admin Pages:</h3>
-<a href="surveyStats1.php">See table of users and survey response counts</a> | 
-<a href="surveyStats2.php">See stats 2</a> 
+<a href="surveyStats1.php">Stats page 1:  Table of users and survey response counts</a> <br/> 
+<a href="surveyStats2.php">Stats page 2:</a>  <br/>
+<a href="surveyStats3.php">Stats page 3:</a>  <br/>
  
 </body>
 </html>
