@@ -47,8 +47,9 @@ if(defined('DEBUG')){
 <h3>Admin Pages:</h3>
 <a href="surveyStats1.php">Stats page 1:  Table of users and survey response counts</a> <br/> 
 <a href="surveyStats2.php">Stats page 2:</a>  <br/>
-<a href="surveyStats3.php">Stats page 3: Incomplete surveys</a>  <br/>
- <a href="surveyStats4.php">Stats page 4: Both incomplete and complete</a>  <br/>
+<a href="surveyStats3.php">Stats page 3: Only Incomplete surveys</a>  <br/>
+<a href="surveyStats5.php">Stats page 5: Only Complete surveys</a>  <br/>
+<a href="surveyStats4.php">Stats page 4: Both incomplete and complete surveys</a>  <br/>
  
 </body>
 </html>
