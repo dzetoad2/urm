@@ -51,7 +51,7 @@ if($userId != 1){
 
 
 <div>
-<h3>Survey stats 4:  Surveys: Both incomplete and complete :</h3>
+<h3>Survey stats 4: Stats page 4: Both incomplete and complete</h3>
 
 <form id="chooseAction" name="chooseAction" action="myFacilities.php"
 	method="post">
