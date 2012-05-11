@@ -28,7 +28,7 @@ if($userId != 1){
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
 <link rel="stylesheet" type="text/css" href="css/tables.css" />
 
-<title>Survey stats 3</title>
+<title>Survey stats 4</title>
 </head>
 <body>
 <?php
