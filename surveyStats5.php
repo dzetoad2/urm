@@ -66,6 +66,7 @@ $rows = getStats5RowsHtml($userId);
 	    <th>Survey Type</th> 
 		<th>User name</th>
 		<th>Facility Name</th>
+		<th>Facility State</th>
 		<th>Custom Facility?</th>
 		<th>Answered</th>
 		<th>Out of total questions</th>
