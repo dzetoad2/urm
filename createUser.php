@@ -1,9 +1,16 @@
 <?php 
 try{
 
+header("Location: createUser_disabled.php");
+exit();
+
+//==================== TOTALLY DISABLED WITH ABOVE. REDIRECTS TO THE OTHER PAGE. ============
+	
 require_once 'urm_secure/functions.php';
 require_once 'urm_secure/validationFunctions.php'; 
- 
+
+
+
 if ( isset($_POST['register'])){
 
  $new_username = "";

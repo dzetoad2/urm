@@ -1,7 +1,7 @@
 
 
 <?php
- 
+
 require_once 'urm_secure/functions.php';
 require_once 'urm_secure/sessionStateFunctions.php';
 
@@ -153,14 +153,15 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 </form>
 <div> 
  <a href="resetPassword.php">Forgot Password?</a> |
- <a href="createUser.php">Register as a New User</a>
+ <label class="grayText">Register as a New User (Registraion no longer available)</label><br/>
+ <label class="grayText">The survey is available only to those who have not yet completed their surveys until Friday June 22, 2012</label>
 </div>
 <hr/>
 <div>
 <h4>Instructions:</h4>
 <p>If you have previously registered, 
 provide your access information to enter the survey again. 
-If you have not already done so, register here to access survey. 
+  
    
 </p>
 <p>
