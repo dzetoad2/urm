@@ -117,6 +117,9 @@ if(isset($_SESSION['createUserSuccessful']) && $_SESSION['createUserSuccessful']
 </head>
 
 <body>
+<?php  
+//	echo "ip is: ".$ip."<br/>";
+?>
 <div class="header"> 
 <?php if(isset($statusLabel) && $statusLabel!=''){ ?>
 <h4 id="statusLabel" class="statusLabel"><?php echo $statusLabel; ?></h4>

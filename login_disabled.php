@@ -2,13 +2,14 @@
 
 <?php
  require_once('urm_secure/constants.php');
-
+ require_once('urm_secure/validationFunctions.php');
  $today = getdate();
  
  //==========IF ITS LATER THAN JUNE 22 2012, LOGIN IS NO LONGER POSSIBLE. ==========
 if($today['year'] >= constant('endingYear') && 
    $today['mon'] >= constant('endingMonth')    && 
-   $today['mday'] > constant('endingDay')){
+   $today['mday'] > constant('endingDay') &&
+   isLANIP($ip)=== false){
 	//do nothing
 	//echo "DOING NOTHING!";
 	//exit();
