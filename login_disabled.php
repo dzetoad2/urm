@@ -13,7 +13,6 @@ if($today['year'] >= constant('endingYear') &&
 	//do nothing
 	//echo "DOING NOTHING!";
 	//exit();
-   	
 }else{
 	//echo 'HEADER TO LOGIN!!!!!';
 	header('Location: login.php');
@@ -46,7 +45,9 @@ if($today['year'] >= constant('endingYear') &&
 <?php }?>
 <?php if(isset($errorLabel) && $errorLabel!=''){?>
 <h4 class="errorLabel"><?php echo $errorLabel;?></h4>
-<?php }?>
+<?php }
+echo "Your IP is: ".$ip."<br/>";
+?>
 </div>
 
 <form action="login.php" method="post">
