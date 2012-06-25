@@ -3,7 +3,10 @@
 <?php
  require_once('urm_secure/constants.php');
  require_once('urm_secure/validationFunctions.php');
+ require_once('urm_secure/functions2.php');
+ 
  $today = getdate();
+ $ip = getIpAddress();
  
  //==========IF ITS LATER THAN JUNE 22 2012, LOGIN IS NO LONGER POSSIBLE. ==========
 if($today['year'] >= constant('endingYear') && 
