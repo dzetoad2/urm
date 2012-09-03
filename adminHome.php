@@ -50,6 +50,7 @@ if(defined('DEBUG')){
 <a href="surveyStats3.php">Stats page 3: Only Incomplete surveys</a>  <br/>
 <a href="surveyStats5.php">Stats page 5: Only Complete surveys</a>  <br/>
 <a href="surveyStats4.php">Stats page 4: Both incomplete and complete surveys</a>  <br/>
+<a href="surveyStats6.php">Stats page 6: Report: User Created Activities, organized by Survey Category</a>  <br/>
  
 </body>
 </html>
