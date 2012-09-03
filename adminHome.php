@@ -6,6 +6,7 @@ require_once 'urm_secure/functions.php';
 require_once 'urm_secure/facilityFunctions.php';
 require_once 'urm_secure/facilityTypeFunctions.php';
 require_once 'urm_secure/modProfileFunctions.php';
+require_once 'urm_secure/breadCrumbFunctions.php';
 
 if(!loggedinAdmin()){
   //echo "userarea but not loggedin!<br/>\n";
@@ -40,6 +41,14 @@ if(defined('DEBUG')){
 	   echo "<br/>Your phone is: ". getParam($_SESSION['username'],"phone");
 }
 
+$sc1name = getSurveyCategoryName(1);
+$sc2name = getSurveyCategoryName(2);
+$sc3name = getSurveyCategoryName(3);
+$sc4name = getSurveyCategoryName(4);
+$sc5name = getSurveyCategoryName(5);
+$sc6name = getSurveyCategoryName(6);
+$sc7name = getSurveyCategoryName(7);
+
 ?>
 <a href="logout.php">Log out</a> |
 <a href="home.php">Home</a>
@@ -50,7 +59,13 @@ if(defined('DEBUG')){
 <a href="surveyStats3.php">Stats page 3: Only Incomplete surveys</a>  <br/>
 <a href="surveyStats5.php">Stats page 5: Only Complete surveys</a>  <br/>
 <a href="surveyStats4.php">Stats page 4: Both incomplete and complete surveys</a>  <br/>
-<a href="surveyStats6.php">Stats page 6: Report: User Created Activities, organized by Survey Category</a>  <br/>
+<a href="surveyStats6.php?surveyCategoryId=1">Stats page 6-1: Report: User Created Activities, for Survey Category 1, <?php echo $sc1name;?></a>  <br/>
+<a href="surveyStats6.php?surveyCategoryId=2">Stats page 6-2: Report: User Created Activities, for Survey Category 2, <?php echo $sc2name;?></a>  <br/>
+<a href="surveyStats6.php?surveyCategoryId=3">Stats page 6-3: Report: User Created Activities, for Survey Category 3, <?php echo $sc3name;?></a>  <br/>
+<a href="surveyStats6.php?surveyCategoryId=4">Stats page 6-4: Report: User Created Activities, for Survey Category 4, <?php echo $sc4name;?></a>  <br/>
+<a href="surveyStats6.php?surveyCategoryId=5">Stats page 6-5: Report: User Created Activities, for Survey Category 5, <?php echo $sc5name;?></a>  <br/>
+<a href="surveyStats6.php?surveyCategoryId=6">Stats page 6-6: Report: User Created Activities, for Survey Category 6, <?php echo $sc6name;?></a>  <br/>
+<a href="surveyStats6.php?surveyCategoryId=7">Stats page 6-7: Report: User Created Activities, for Survey Category 7, <?php echo $sc7name;?></a>  <br/>
  
 </body>
 </html>

@@ -19,6 +19,11 @@ $userId = $_SESSION['userid'];
 if($userId != 1){
   $errorMsg="Access denied:  Non admins may not access Admin function pages";
 }
+if(!isset($_GET['surveyCategoryId'])){
+	throw new Exception('surveystats6:  no surveyCategoryId set in GET');
+}
+$surveyCategoryId = $_GET['surveyCategoryId'];
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -51,14 +56,14 @@ if($userId != 1){
 
 
 <div>
-<h3>>Stats page 6: Report: User Created Activities, organized by Survey Category</h3>
+<h3>Stats page 6: Report: User Created Activities, organized by Survey Category</h3>
 
 <form id="chooseAction" name="chooseAction" action="myFacilities.php"
 	method="post">
 	<input type="hidden" id="facilityTypeId" name="facilityTypeId" value="nothing" /></form>
 
 <?php 
-$rows = getStats6RowsHtml($userId);
+$rows = getStats6RowsHtml($userId,$surveyCategoryId);
 ?>
 <table>
 	<thead>
