@@ -1,12 +1,10 @@
-<?php 
+<?php
 
 class SessionStateBean {
 
- public $post,
-        $sess,
-        $pageTitle 
-        ;
+    public $post,
+            $sess,
+            $pageTitle
 
-        
-        
+    ;
 }

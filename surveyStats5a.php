@@ -28,7 +28,7 @@ try {
             <link rel="stylesheet" type="text/css" href="css/styles.css" />
             <link rel="stylesheet" type="text/css" href="css/tables.css" />
 
-            <title>Survey stats 2</title>
+            <title>Stats page 5a: Complete surveys, sorted by survey type (both normal and custom)</title>
         </head>
         <body>
             <?php
@@ -50,20 +50,25 @@ try {
 
 
             <div>
-                <h3>Survey stats 2:</h3>
+                <h3>Stats page 5a: Complete surveys, sorted by survey type (both normal and custom)</h3>
 
                 <form id="chooseAction" name="chooseAction" action="myFacilities.php"
                       method="post">
                     <input type="hidden" id="facilityTypeId" name="facilityTypeId" value="nothing" /></form>
 
                 <?php
-                $rows = getStats2RowsHtml($userId);
+                $rows = getStats5RowsHtml();
                 ?>
                 <table>
                     <thead>
-                        <tr> 
-                            <th>Survey Type</th>
-                            <th>Total number completed</th>
+                        <tr>
+                            <th>Survey Type</th> 
+                            <th>User name</th>
+                            <th>Facility Name</th>
+                            <th>Facility State</th>
+                            <th>Custom Facility?</th>
+                            <th>Answered</th>
+                            <th>Out of total questions</th>
                         </tr>
                     </thead>
                     <tbody>

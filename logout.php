@@ -5,7 +5,7 @@ session_start();
 //destroy session
 session_destroy();
 //unset cookie
-setcookie("username","",time()-2);     //invalidates cookie
+setcookie("username", "", time() - 2);     //invalidates cookie
 header("Location: login.php");
 
 
